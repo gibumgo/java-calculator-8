@@ -3,7 +3,7 @@ package calculator.domin;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class DelimiterParser {
+public class DelimiterExtractor {
     private static final String LINE_BREAK = "\n";
     private static final String ESCAPE_LINE_BREAK = "\\n";
     private static final String CUSTOM_DELIMITER_REGEX = "//(.)" + ESCAPE_LINE_BREAK + "(.*)";
@@ -13,12 +13,12 @@ public class DelimiterParser {
 
     private final String input;
 
-    private DelimiterParser(String input) {
+    private DelimiterExtractor(String input) {
         this.input = preprocessInput(input);
     }
 
-    public static DelimiterParser from(String input) {
-        return new DelimiterParser(input);
+    public static DelimiterExtractor from(String input) {
+        return new DelimiterExtractor(input);
     }
 
     private String preprocessInput(String input) {

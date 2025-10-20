@@ -4,16 +4,16 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Numbers {
-    private  final List<Number> numbers;
+    private  final List<PositiveNumber> numbers;
 
 
-    private Numbers(List<Number> numbers) {
+    private Numbers(List<PositiveNumber> numbers) {
         this.numbers = numbers;
     }
 
     public static Numbers from(String[] input) {
-        List<Number> list = Arrays.stream(input)
-                .map(Number::create)
+        List<PositiveNumber> list = Arrays.stream(input)
+                .map(PositiveNumber::create)
                 .toList();
         return new Numbers(list);
     }
@@ -21,7 +21,7 @@ public class Numbers {
 
     public int sum() {
         return  numbers.stream()
-                .mapToInt(Number::toInt)
+                .mapToInt(PositiveNumber::toInt)
                 .sum();
     }
 }

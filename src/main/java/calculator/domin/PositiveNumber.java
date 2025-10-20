@@ -1,24 +1,24 @@
 package calculator.domin;
 
-public class Number {
+public class PositiveNumber {
     private static final int MIN_NUMBER = 0;
     private static final String NUMBER_FORMAT_ERROR_MESSAGE = "숫자를 입력해주세요.";
     private static final String NUMBER_RANGE_ERROR_MESSAGE = "양수를 입력해주세요.";
     private final int number;
 
-    private Number(int number) {
+    private PositiveNumber(int number) {
         validatePositive(number);
         this.number = number;
     }
 
-    private Number(String number) {
+    private PositiveNumber(String number) {
         int parsedNumber = parseNumber(number);
         validatePositive(parsedNumber);
         this.number = parsedNumber;
     }
 
-    public static Number create(String number){
-        return new Number(number);
+    public static PositiveNumber create(String number){
+        return new PositiveNumber(number);
     }
 
     private static int parseNumber(String input) {
@@ -35,8 +35,8 @@ public class Number {
         }
     }
 
-    public Number plus(Number number) {
-        return new Number(this.number + number.number);
+    public PositiveNumber plus(PositiveNumber number) {
+        return new PositiveNumber(this.number + number.number);
     }
 
     public int toInt() {
