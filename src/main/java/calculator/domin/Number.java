@@ -1,4 +1,4 @@
-package calculator;
+package calculator.domin;
 
 public class Number {
     private static final int MIN_NUMBER = 0;
